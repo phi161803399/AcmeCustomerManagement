@@ -12,5 +12,12 @@ namespace ACM.BL
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public void ValidateEmail()
+        {
+            // ensure valid email
+            // if not,
+            // request an email adress
+        }
     }
 }

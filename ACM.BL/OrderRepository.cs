@@ -8,5 +8,9 @@ namespace ACM.BL
 {
     public class OrderRepository
     {
+        public void Add(Order order)
+        {
+            // add order to repository
+        }
     }
 }

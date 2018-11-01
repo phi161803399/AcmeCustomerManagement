@@ -8,5 +8,9 @@ namespace ACM.BL
 {
     public class Payment
     {
+        public void ProcessPayment()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -30,9 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.GoalTextBox = new System.Windows.Forms.TextBox();
+            this.StepsTextBox = new System.Windows.Forms.TextBox();
+            this.CalculateButton = new System.Windows.Forms.Button();
+            this.ResultLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -55,37 +56,47 @@
             this.label2.Text = "Number of Steps Today:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
+            // GoalTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(163, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.GoalTextBox.Location = new System.Drawing.Point(163, 44);
+            this.GoalTextBox.Name = "GoalTextBox";
+            this.GoalTextBox.Size = new System.Drawing.Size(100, 20);
+            this.GoalTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // StepsTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(163, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.StepsTextBox.Location = new System.Drawing.Point(163, 83);
+            this.StepsTextBox.Name = "StepsTextBox";
+            this.StepsTextBox.Size = new System.Drawing.Size(100, 20);
+            this.StepsTextBox.TabIndex = 3;
             // 
-            // button1
+            // CalculateButton
             // 
-            this.button1.Location = new System.Drawing.Point(275, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 59);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CalculateButton.Location = new System.Drawing.Point(275, 44);
+            this.CalculateButton.Name = "CalculateButton";
+            this.CalculateButton.Size = new System.Drawing.Size(81, 59);
+            this.CalculateButton.TabIndex = 4;
+            this.CalculateButton.Text = "Calculate";
+            this.CalculateButton.UseVisualStyleBackColor = true;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
+            // 
+            // ResultLabel
+            // 
+            this.ResultLabel.AutoSize = true;
+            this.ResultLabel.Location = new System.Drawing.Point(28, 124);
+            this.ResultLabel.Name = "ResultLabel";
+            this.ResultLabel.Size = new System.Drawing.Size(0, 13);
+            this.ResultLabel.TabIndex = 5;
             // 
             // PedometerWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 233);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ResultLabel);
+            this.Controls.Add(this.CalculateButton);
+            this.Controls.Add(this.StepsTextBox);
+            this.Controls.Add(this.GoalTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PedometerWin";
@@ -99,8 +110,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox GoalTextBox;
+        private System.Windows.Forms.TextBox StepsTextBox;
+        private System.Windows.Forms.Button CalculateButton;
+        private System.Windows.Forms.Label ResultLabel;
     }
 }

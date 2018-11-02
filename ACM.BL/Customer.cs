@@ -19,5 +19,11 @@ namespace ACM.BL
             // if not,
             // request an email adress
         }
+
+        public double CalculatePercentOfGoalSteps(string text1, string text2)
+        {
+            var result = 75.4;
+            return result;
+        }
     }
 }

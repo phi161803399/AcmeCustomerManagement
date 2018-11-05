@@ -20,17 +20,20 @@ namespace ACM.BL
             // request an email adress
         }
 
-        public double CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
+        public decimal CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
         {
-            double result = 0;
+            decimal actualStepCount = 0;
+            decimal goalStepCount = 0;
 
-            var goalStepCount = Convert.ToDouble(goalSteps);
-            if (goalStepCount > 0)
-            {
-                result = (Convert.ToDouble(actualSteps)/goalStepCount) * 100;
-            }
+            if (string.IsNullOrWhiteSpace(goalSteps)) throw new ArgumentException("Goal must be entered", "goalSteps");
+            if (string.IsNullOrWhiteSpace(actualSteps)) throw new ArgumentException("Actual steps must be entered", "actualSteps");
 
-            return result;
+
+
+            decimal.TryParse(goalSteps, out goalStepCount);
+            decimal.TryParse(actualSteps, out actualStepCount);
+
+            return (actualStepCount / goalStepCount) * 100;
         }
     }
 }

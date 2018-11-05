@@ -20,9 +20,16 @@ namespace ACM.BL
             // request an email adress
         }
 
-        public double CalculatePercentOfGoalSteps(string text1, string text2)
+        public double CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
         {
-            var result = 75.4;
+            double result = 0;
+
+            var goalStepCount = Convert.ToDouble(goalSteps);
+            if (goalStepCount > 0)
+            {
+                result = (Convert.ToDouble(actualSteps)/goalStepCount) * 100;
+            }
+
             return result;
         }
     }

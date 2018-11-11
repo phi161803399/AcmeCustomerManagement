@@ -52,6 +52,46 @@ namespace ACM.BLTests
 
             // Assert
             Assert.AreEqual(expected, actual);
+        }       
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CalculatePercentOfGoalStepsTestGoalIsNull()
+        {
+            // arrange
+            var customer = new Customer();
+            string goalSteps = null;
+            string actualSteps = "2000";
+
+            // act
+            var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CalculatePercentOfGoalStepsTestGoalIsNotNumeric()
+        {
+            // arrange
+            var customer = new Customer();
+            string goalSteps = "one";
+            string actualSteps = "2000";
+
+            // act
+            try
+            {
+                var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Goal must be numeric", ex.Message);
+                throw;
+            }
+        }
+
+        //[TestMethod()]
+        //public void CalculatePercentOfGoalStepsTest()
+        //{
+        //    Assert.Fail();
+        //}
     }
 }

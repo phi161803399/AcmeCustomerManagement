@@ -37,11 +37,19 @@ namespace ACM.BL
             // EMAIL
             if (emailReceipt)
             {
-                customer.ValidateEmail();
-                customerRepository.Update();
+                var result = customer.ValidateEmail();
+                if (result.Success) 
+                {
+                    customerRepository.Update();
 
-                emailLibrary.SendEmail(customer.EmailAddress,
-                                        "Here is your receipt");
+                    emailLibrary.SendEmail(customer.EmailAddress,
+                                            "Here is your receipt");
+                } else {
+                    foreach (var message in result.MessageList)
+                    {
+                        Console.WriteLine(message);
+                    }
+                }               
             }
         }
     }

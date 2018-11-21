@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,17 +19,17 @@ namespace ACM.BL
         public void ProcessPayment()
         {
             PaymentType paymentTypeOption;
-            //if (!enum.TryParse(PaymentType.ToString(), out paymentTypeOption)
-            //{
-            //    throw new InvalidEnumArgumentException("Payment Type", (int)this.PaymentType, typeof(PaymentType));
-            //}
-
-            switch (PaymentType)
+            if (!Enum.TryParse(this.PaymentType.ToString(), out paymentTypeOption))
             {
-                case (int)ACM.BL.PaymentType.CreditCard:
+                throw new InvalidEnumArgumentException("Payment Type", (int)this.PaymentType, typeof(PaymentType));
+            }
+
+            switch (paymentTypeOption)
+            {
+                case ACM.BL.PaymentType.CreditCard:
                     // Process credit card
                     break;
-                case (int)ACM.BL.PaymentType.PayPal:
+                case ACM.BL.PaymentType.PayPal:
                     // Process PayPal
                     break;
                 default:

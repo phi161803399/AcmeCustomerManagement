@@ -42,8 +42,17 @@ namespace ACM.Win
             var allowSplitOrders = true;
             var emailReceipt = true;
 
-            var orderController = new OrderController();
-            orderController.PlaceOrder(customer, order, payment, allowSplitOrders, emailReceipt);
+            try
+            {
+                var orderController = new OrderController();
+                orderController.PlaceOrder(customer, order, payment, allowSplitOrders, emailReceipt);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("Missing argument: " + ex.Message);
+                throw;
+            }
+            
         }
     }
 }

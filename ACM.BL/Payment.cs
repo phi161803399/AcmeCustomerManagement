@@ -18,17 +18,17 @@ namespace ACM.BL
         public void ProcessPayment()
         {
             PaymentType paymentTypeOption;
-            if (!enum.TryParse(this.PaymentType.ToString(), out paymentTypeOption)
-            {
-                throw new InvalidEnumArgumentException("Payment Type", (int)this.PaymentType, typeof(PaymentType));
-            }
+            //if (!enum.TryParse(PaymentType.ToString(), out paymentTypeOption)
+            //{
+            //    throw new InvalidEnumArgumentException("Payment Type", (int)this.PaymentType, typeof(PaymentType));
+            //}
 
-            switch (paymentTypeOption)
+            switch (PaymentType)
             {
-                case ACM.BL.PaymentType.CreditCard:
+                case (int)ACM.BL.PaymentType.CreditCard:
                     // Process credit card
                     break;
-                case ACM.BL.PaymentType.PayPal:
+                case (int)ACM.BL.PaymentType.PayPal:
                     // Process PayPal
                     break;
                 default:

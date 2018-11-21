@@ -51,12 +51,17 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
+    <Compile Include="OrderControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ACM.BL\ACM.BL.csproj">
       <Project>{c2e05efb-f46f-4135-b34c-dac45deed70e}</Project>
       <Name>ACM.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Common\Core.Common.csproj">
+      <Project>{7799fd76-0265-4210-98f7-ec744fb3679b}</Project>
+      <Name>Core.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

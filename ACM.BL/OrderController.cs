@@ -1,6 +1,7 @@
 ﻿using Core.Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,11 @@ namespace ACM.BL
                                         Payment payment,
                                         bool allowSplitOrders, bool emailReceipt)
         {
+            Debug.Assert(customerRepository != null, "Missing customer repository instance");
+            Debug.Assert(orderRepository != null, "Missing order repository instance");
+            Debug.Assert(inventoryRepository != null, "Missing inventory repository instance");
+            Debug.Assert(emailLibrary != null, "Missing email library instance");
+
             if (customer == null) throw new ArgumentNullException("Customer instance is null");
             if (order == null) throw new ArgumentNullException("Order instance is null");
             if (payment == null) throw new ArgumentNullException("Payment instance is null");

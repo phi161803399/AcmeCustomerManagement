@@ -10,7 +10,17 @@ namespace Core.Common
     {
         public void SendEmail(string emailAddress, string v)
         {
-            // send email to customer
+            // if a valid email address is provided
+            try
+            {
+                // send email to customer
+            }
+            catch (Exception ex)
+            {
+                // log
+                throw; // re-throw 
+            }
+            
         }
     }
 }

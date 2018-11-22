@@ -49,7 +49,8 @@ namespace ACM.Win
             }
             catch (ArgumentNullException ex)
             {
-                MessageBox.Show("Missing argument: " + ex.Message);
+                // Log the issue
+                MessageBox.Show("Order was not successful.");
                 throw;
             }
             
